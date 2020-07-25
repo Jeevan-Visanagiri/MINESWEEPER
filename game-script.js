@@ -71,11 +71,13 @@ var Start_Game=()=>
     // Running the timer
     setInterval(function(){
         if(seconds==0)
+       {    timer.innerHTML=seconds;
             clearInterval();
+        }
         else
         timer.innerHTML=seconds--;
-    },1000,seconds=300);
+    },1000,seconds=10);
     Start_button.disabled=true;
 }
 
-Start_button.addEventListener("click",()=>{ Start_Game()});  ''
+Start_button.addEventListener("click",()=>{ Start_Game()});/// Start action
