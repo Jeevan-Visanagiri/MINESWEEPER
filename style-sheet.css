@@ -1,0 +1,32 @@
+.Homepagediv
+{
+    position: relative;
+    width: 50%;
+    left :25%;
+    right: 25%;
+    top: 25%;
+}
+.Play-Button
+{
+    position: absolute;
+    left: 43%;
+    top :40%;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    font-family: cursive;
+    font-weight: bolder;
+    text-align: center;
+    color:black ;
+    opacity: 70%;
+    font-size: 50px;
+}
+.title-header
+{
+    color: red;
+    position: absolute;
+    font-family: cursive;
+    font-size: 500%;
+    top: 10%;
+    left:10%;
+}
