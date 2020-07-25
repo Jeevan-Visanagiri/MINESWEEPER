@@ -1,0 +1,76 @@
+.Main-div
+{
+    position: relative;
+    width: 60%;
+    left :20%;
+    right: 20%;
+    font-style: oblique;
+    background-color:pink;
+}
+.start-button
+{
+    position: absolute;
+    float: left;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    font-family: cursive;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.Game-level
+{
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    height: auto;
+    font-family: cursive;
+    font-size: 30px;
+    border-radius: 10px;
+}
+#timer_label
+{
+    position: absolute;
+    font-size: 35px;
+    font-family: cursive;
+    left: 0%;
+    bottom: 30%;
+}
+#time_counter{
+    position: absolute;
+    font-size: 35px;
+    font-family: cursive;
+    left: 5%;
+    bottom: 17%;
+}
+#score_label
+{
+    position: absolute;
+    font-size: 35px;
+    top:5%;
+    font-family: cursive;
+}
+#score
+{
+    position: absolute;
+    font-size: 35px;
+    top:10%;
+    left:5%;
+    font-family: cursive;
+}
+.grid-container
+{
+    display: grid;
+    position: relative;
+    left: 21%;
+    width: 79%;
+    background-color: springgreen;
+    text-align: center;
+    grid-template-rows: repeat(16, 40px);
+    grid-template-columns: repeat(16, 40px);
+}
+.grid-item {
+    border: 1px solid black;
+    text-align: center;
+    top: 50%;
+  }

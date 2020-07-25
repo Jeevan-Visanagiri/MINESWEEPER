@@ -6,7 +6,7 @@
     right: 25%;
     top: 25%;
 }
-.Play-Button
+.Button
 {
     position: absolute;
     left: 43%;
@@ -17,8 +17,7 @@
     font-family: cursive;
     font-weight: bolder;
     text-align: center;
-    color:black ;
-    opacity: 70%;
+    color:darkblue;
     font-size: 50px;
 }
 .title-header
@@ -29,4 +28,5 @@
     font-size: 500%;
     top: 10%;
     left:10%;
+    font-style: oblique;
 }

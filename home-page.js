@@ -7,14 +7,12 @@ backgroundimage.className="Back-ground-image";
 backgroundimage.src='home-image.jpg';
 div1.appendChild(backgroundimage)
 
-var playbutton=document.createElement('button'); // adding play button on the Image.
-playbutton.className="Play-Button";
+var playbutton=document.createElement('a'); // adding play button on the Image.
+playbutton.className="Button";
 playbutton.id="PlayButton"
 playbutton.innerText="PLAY";
+playbutton.setAttribute("href","game-page.html")
 div1.appendChild(playbutton);
-playbutton.addEventListener('click',()=>{
-    playbutton.href="game-page.html";
-});
 
 var Game_title=document.createElement('h1')//Game title
 Game_title.innerHTML='MINESWEEPER';
