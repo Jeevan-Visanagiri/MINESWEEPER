@@ -56,7 +56,7 @@ grid.style.setProperty('--grid-rows', 16);
   grid.style.setProperty('--grid-cols', 16 );
   for (let c = 0; c < (16 * 16); c++) {
     let cell = document.createElement("div");
-    cell.innerHTML = (c + 1);                           //cell value
+    //cell.innerHTML = (c + 1);                           //cell value
     grid.appendChild(cell).className = "grid-item";
   };
 Div1.appendChild(grid);
@@ -68,6 +68,7 @@ document.body.appendChild(Div1);   // appending the div to body
 
 var Start_Game=()=>
 {
+    // Running the timer
     setInterval(function(){
         if(seconds==0)
             clearInterval();
@@ -77,5 +78,4 @@ var Start_Game=()=>
     Start_button.disabled=true;
 }
 
-
-Start_button.addEventListener("click",()=>{ Start_Game()});
+Start_button.addEventListener("click",()=>{ Start_Game()});  ''

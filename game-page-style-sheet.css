@@ -64,7 +64,6 @@
     position: relative;
     left: 21%;
     width: 79%;
-    background-color: springgreen;
     text-align: center;
     grid-template-rows: repeat(16, 40px);
     grid-template-columns: repeat(16, 40px);
@@ -73,4 +72,5 @@
     border: 1px solid black;
     text-align: center;
     top: 50%;
+    background-color: springgreen;
   }
