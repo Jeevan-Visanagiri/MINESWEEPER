@@ -13,7 +13,7 @@ playbutton.id="PlayButton"
 playbutton.innerText="PLAY";
 div1.appendChild(playbutton);
 playbutton.addEventListener('click',()=>{
-    playbutton.href="C:\Users\hi\Documents\GitHub\MINESWEEPER\game-page.html";
+    playbutton.href="game-page.html";
 });
 
 var Game_title=document.createElement('h1')//Game title
