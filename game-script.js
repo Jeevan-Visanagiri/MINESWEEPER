@@ -54,10 +54,16 @@ grid.className="grid-container";
 grid.id="Mine-grid";
 grid.style.setProperty('--grid-rows', 16);
   grid.style.setProperty('--grid-cols', 16 );
+  
+  var cell=[];
   for (let c = 0; c < (16 * 16); c++) {
-    let cell = document.createElement("div");
+    cell[c] = document.createElement("div");
     //cell.innerHTML = (c + 1);                           //cell value
-    grid.appendChild(cell).className = "grid-item";
+    var mine= document.createAttribute("Mines");   // creating a mine attribute and assigniing it to false by default
+    mine.value="false";
+        cell[c].setAttributeNode(mine);
+    grid.appendChild(cell[c]).className = "grid-item";
+
   };
 Div1.appendChild(grid);
 
@@ -68,6 +74,8 @@ document.body.appendChild(Div1);   // appending the div to body
 
 var Start_Game=()=>
 {
+    addmines(); // adding mines
+
     // Running the timer
     setInterval(function(){
         if(seconds==0)
@@ -76,8 +84,18 @@ var Start_Game=()=>
         }
         else
         timer.innerHTML=seconds--;
-    },1000,seconds=10);
+       },1000,seconds=10);
     Start_button.disabled=true;
 }
 
 Start_button.addEventListener("click",()=>{ Start_Game()});/// Start action
+
+
+
+function addmines()
+{
+        for(let i=0;i<256;i++)
+        {
+            console.log(cell[i].getAttribute("mine"));
+        }   
+}
