@@ -54,12 +54,28 @@ grid.className="grid-container";
 grid.id="Mine-grid";
 grid.style.setProperty('--grid-rows', 16);
   grid.style.setProperty('--grid-cols', 16 );
-  for (c = 0; c < (16 * 16); c++) {
+  for (let c = 0; c < (16 * 16); c++) {
     let cell = document.createElement("div");
-    cell.innerText = (c + 1);
+    cell.innerHTML = (c + 1);                           //cell value
     grid.appendChild(cell).className = "grid-item";
   };
 Div1.appendChild(grid);
 
+document.body.appendChild(Div1);   // appending the div to body
 
-document.body.appendChild(Div1);
+
+/// Game Logic
+
+var Start_Game=()=>
+{
+    setInterval(function(){
+        if(seconds==0)
+            clearInterval();
+        else
+        timer.innerHTML=seconds--;
+    },1000,seconds=300);
+    Start_button.disabled=true;
+}
+
+
+Start_button.addEventListener("click",()=>{ Start_Game()});
