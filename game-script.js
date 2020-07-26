@@ -76,9 +76,6 @@ var Start_Game=(cell)=>
 { 
  addmines(cell);    // adding mines.
     addNumbers(cell)// adding Number to the grids.
-    setTimeout(() => {
-        
-    }, 2000);
     ClickCellEvent(cell);  //capturing ell event.
     // Running the timer
     setInterval(function(){
@@ -157,13 +154,6 @@ function ClickCellEvent(cell) {
 }
 function Gameover()
 {
-    alert("Game Over your Score is :" +Score.innerHTML );
-    location.reload();
-  
-  /*  var EndGame=document.createElement('a'); // adding play button on the Image.
-EndGame.className="end-Button";
-EndGame.id="endButton"
-EndGame.innerText="END";
-EndGame.setAttribute("href","EndGame.html") ;
-*/
+    alert("Game Over you steped on MINE, your Score is :" +Score.innerHTML +" Click ok to go Home page");
+    window.location.href="index.html";
 }

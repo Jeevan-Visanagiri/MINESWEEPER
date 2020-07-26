@@ -15,7 +15,7 @@
     width: auto;
     height: auto;
     font-family: cursive;
-    font-size: 30px;
+    font-size: 50px;
     border-radius: 10px;
 }
 .Game-level
@@ -74,5 +74,6 @@
     top: 50%;
     background-color: springgreen;
     color: springgreen;
-
+    font-weight: bolder;
+    font-size: 40px;
   }
