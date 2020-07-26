@@ -106,10 +106,39 @@ function addmines(cell)
 }
 function addNumbers(cell) {
     for (let i = 0; i < 256; i++) {
-         if (cell[i].innerHTML!=='X') {
+        var count=0;
+        if(cell[i].innerHTML!=="X")
+        {
+            if( i+1>=0 && i+1<256 && cell[i+1].innerHTML=="X")
+            count++;
+            if(i-1>=0 && i-1<256 && cell[i-1].innerHTML=="X")
+            count++;
+            if(i<198)
+            {
+            if(i-16>=0 && i-16<=256 && cell[i-16].innerHTML=="X")
+            count++;
+            if(i+16>=0 && i+16<=256 && cell[i+16].innerHTML=="X" )
+            count++;
+            if( i-15>=0 && i-15<=256 && cell[i-15].innerHTML=="X")
+            count++;
+            if( i+15>=0 && i+15<=256 && cell[i+15].innerHTML=="X" )
+            count++;
+            
+            if( i+17>=0 && i+17<=256 && cell[i+17].innerHTML=="X")
+            count++;
+            if( i-17>=0 && i-17<=256 && cell[i-17].innerHTML=="X" )
+            count++;
+            }
+
+            cell[i].innerHTML=count;
+
+        }
+            count=0;
+
+         /*if (cell[i].innerHTML!=='X') {
              let r=Math.floor(Math.random()*8);
              cell[i].innerHTML=r;
-         }
+         }*/
     }   
 }
 function ClickCellEvent(cell) {
