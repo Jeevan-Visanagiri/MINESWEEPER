@@ -59,9 +59,9 @@ grid.style.setProperty('--grid-rows', 16);
   for (let c = 0; c < (16 * 16); c++) {
     cell[c] = document.createElement("div");
     //cell.innerHTML = (c + 1);                           //cell value
-    var mine= document.createAttribute("Mines");   // creating a mine attribute and assigniing it to false by default
-    mine.value="false";
-        cell[c].setAttributeNode(mine);
+  //  var mine= document.createAttribute("Mines");   // creating a mine attribute and assigniing it to false by default
+    //mine.value="false";
+    //    cell[c].setAttributeNode(mine);
     grid.appendChild(cell[c]).className = "grid-item";
 
   };
@@ -72,30 +72,66 @@ document.body.appendChild(Div1);   // appending the div to body
 
 /// Game Logic
 
-var Start_Game=()=>
-{
-    addmines(); // adding mines
-
+var Start_Game=(cell)=>
+{ 
+ addmines(cell);    // adding mines.
+    addNumbers(cell)// adding Number to the grids.
+    ClickCellEvent(cell);  //capturing ell event.
     // Running the timer
     setInterval(function(){
         if(seconds==0)
        {    timer.innerHTML=seconds;
+            Gameover();
             clearInterval();
         }
         else
         timer.innerHTML=seconds--;
-       },1000,seconds=10);
+       },1000,seconds=30);
     Start_button.disabled=true;
 }
 
-Start_button.addEventListener("click",()=>{ Start_Game()});/// Start action
+Start_button.addEventListener("click",()=>{ Start_Game(cell)});/// Start actions
 
-
-
-function addmines()
+function addmines(cell)
 {
-        for(let i=0;i<256;i++)
+    var arr = [];
+    while (arr.length < 40) {
+        var r = Math.floor(Math.random() * 256) + 1;
+        if (arr.indexOf(r) === -1)
+            arr.push(r);
+    }
+    for (let i = 0;i < arr.length; i++) {
+        cell[arr[i]].innerHTML="X";
+    }
+}
+function addNumbers(cell) {
+    for (let i = 0; i < 256; i++) {
+         if (cell[i].innerHTML!=='X') {
+             let r=Math.floor(Math.random()*8);
+             cell[i].innerHTML=r;
+         }
+    }   
+}
+function ClickCellEvent(cell) {
+    for (let i = 0; i <256; i++) {
+        var s=0;
+        cell[i].addEventListener("click",()=>
         {
-            console.log(cell[i].getAttribute("mine"));
-        }   
+            if (cell[i].innerHTML==="X") {
+                Gameover();
+            }
+            else{
+                Score.innerHTML=++s;
+            }
+        })
+    }
+}
+function Gameover()
+{
+    var EndGame=document.createElement('a'); // adding play button on the Image.
+EndGame.className="end-Button";
+EndGame.id="endButton"
+EndGame.innerText="END";
+EndGame.setAttribute("href","EndGame.html") ;
+
 }
