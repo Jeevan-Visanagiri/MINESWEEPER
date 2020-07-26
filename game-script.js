@@ -76,6 +76,9 @@ var Start_Game=(cell)=>
 { 
  addmines(cell);    // adding mines.
     addNumbers(cell)// adding Number to the grids.
+    setTimeout(() => {
+        
+    }, 2000);
     ClickCellEvent(cell);  //capturing ell event.
     // Running the timer
     setInterval(function(){
@@ -86,7 +89,7 @@ var Start_Game=(cell)=>
         }
         else
         timer.innerHTML=seconds--;
-       },1000,seconds=30);
+       },1000,seconds=300);
     Start_button.disabled=true;
 }
 
@@ -134,11 +137,6 @@ function addNumbers(cell) {
 
         }
             count=0;
-
-         /*if (cell[i].innerHTML!=='X') {
-             let r=Math.floor(Math.random()*8);
-             cell[i].innerHTML=r;
-         }*/
     }   
 }
 function ClickCellEvent(cell) {
@@ -147,20 +145,25 @@ function ClickCellEvent(cell) {
         cell[i].addEventListener("click",()=>
         {
             if (cell[i].innerHTML==="X") {
+                clearInterval();
                 Gameover();
             }
             else{
                 Score.innerHTML=++s;
             }
+            cell[i].style.color="red";
         })
     }
 }
 function Gameover()
 {
-    var EndGame=document.createElement('a'); // adding play button on the Image.
+    alert("Game Over your Score is :" +Score.innerHTML );
+    location.reload();
+  
+  /*  var EndGame=document.createElement('a'); // adding play button on the Image.
 EndGame.className="end-Button";
 EndGame.id="endButton"
 EndGame.innerText="END";
 EndGame.setAttribute("href","EndGame.html") ;
-
+*/
 }
